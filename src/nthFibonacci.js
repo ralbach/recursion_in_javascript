@@ -18,5 +18,9 @@
 
 var nthFibonacci = function(n) {
   // Your code here
-};
+  if(n < 2){
+    return n;
+  }
+  return nthFibonacci(n-2) + nthFibonacci(n-1);
 
+};

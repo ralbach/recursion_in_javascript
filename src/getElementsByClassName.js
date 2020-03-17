@@ -8,4 +8,16 @@
 
 var getElementsByClassName = function(className) {
   // Your code here
+   var nodeList = [];
+   function check(node) {
+     if (node.classList && node.classList.contains(className)) {
+       nodeList.push(node);
+     }
+     for (var i = 0; i < node.childNodes.length; i++) {
+       check(node.childNodes[i]);
+     }
+   }
+   check(document)
+   console.log(nodeList);
+   return nodeList;
 };
